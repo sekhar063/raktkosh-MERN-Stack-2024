@@ -36,12 +36,13 @@ const RegisterForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // console.log(formData);
     try {
       const formDataToSend = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
         formDataToSend.append(key, value);
       });
-      console.log(formDataToSend);
+      
       const response = await fetch(`${URL}/register`, {
         method: "POST",
         body: formDataToSend,

@@ -75,6 +75,9 @@ const registerUser = asyncHandler(async (req, res) => {
   const avatar = await uploadOnCloudinary(avatarLocalPath);
   const addharImage = await uploadOnCloudinary(addharImageLocalPath);
 
+  // console.log(avatar);
+  // console.log(first);
+
   if (!avatar) {
     throw new ApiError(400, "avatar required");
   }
@@ -176,7 +179,7 @@ const logoutUser = asyncHandler(async (req, res) => {
       new: true,
     },
   );
-  
+
   // console.log("After logout :", user);
 
   //options for cokkies:-
